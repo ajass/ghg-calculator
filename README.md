@@ -25,6 +25,28 @@ pip install -e ".[dev]"
 
 ## Quick Start
 
+### Command Line Interface
+
+For quick calculations, use the command-line tool:
+
+```bash
+# Install the package
+pip install -e .
+
+# Calculate electricity emissions
+ghg-calculator --activity "Electricity Usage" --quantity 1000 --unit kWh
+
+# Calculate gasoline consumption
+ghg-calculator --activity "Gasoline Consumption" --quantity 500 --unit gallon --scope scope_1
+
+# Generate CSV report
+ghg-calculator --activity "Natural Gas" --quantity 10000 --unit MJ --format csv --output report.csv
+```
+
+### Python API
+
+For programmatic usage:
+
 ```python
 from ghg_emissions.calculator import EmissionCalculator
 from ghg_emissions.factors import FactorLoader
