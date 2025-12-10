@@ -29,6 +29,7 @@ classifiers = [
 [project.optional-dependencies]
 dev = ["pytest>=7.0.0", "black", "isort", "mypy"]
 docs = ["sphinx>=5.0.0", "sphinx-rtd-theme"]
+gui = ["PyQt6>=6.5.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]
@@ -36,6 +37,7 @@ include = ["ghg_emissions*"]
 
 [project.scripts]
 ghg-calculator = "ghg_emissions.cli:main"
+ghg-calculator-gui = "ghg_emissions.gui.app:main"
 
 [project.entry-points."ghg_emissions.factors"]
 # Entry points for factor providers

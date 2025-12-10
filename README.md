@@ -18,12 +18,36 @@ A modular, accurate, and extensible Python application for calculating greenhous
 pip install -e .
 ```
 
+For GUI support:
+```bash
+pip install -e ".[gui]"
+```
+
 For development:
 ```bash
-pip install -e ".[dev]"
+pip install -e ".[dev,gui]"
 ```
 
 ## Quick Start
+
+### Graphical User Interface
+
+For an interactive experience, use the GUI application:
+
+```bash
+# Install with GUI dependencies
+pip install -e ".[dev]"
+
+# Launch the GUI
+ghg-calculator-gui
+```
+
+The GUI allows you to:
+- Add multiple emission activities (electricity, fuel, etc.)
+- Specify quantities, units, and scopes
+- Calculate total greenhouse gas emissions
+- View results in a table format
+- Export reports in CSV, JSON, or PDF formats
 
 ### Command Line Interface
 
