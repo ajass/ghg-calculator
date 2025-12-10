@@ -14,6 +14,10 @@ A modular, accurate, and extensible Python application for calculating greenhous
 
 ## Installation
 
+### Basic Installation
+
+**Important:** If you encounter "externally-managed-environment" errors, see the troubleshooting section below.
+
 ```bash
 pip install -e .
 ```
@@ -27,6 +31,78 @@ For development:
 ```bash
 pip install -e ".[dev,gui]"
 ```
+
+### Installation Methods
+
+#### Method 1: Virtual Environment (Recommended)
+
+```bash
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install package
+pip install -e .
+pip install -e ".[gui]"  # For GUI support
+
+# Deactivate when done
+deactivate
+```
+
+#### Method 2: User Installation
+
+```bash
+# Install to user directory (avoids permission issues)
+pip install --user -e .
+pip install --user -e ".[gui]"
+```
+
+#### Method 3: Global Installation with pipx
+
+```bash
+# Install pipx if not available
+pip install --user pipx
+pipx ensurepath
+
+# Install globally
+pipx install -e .
+```
+
+#### Method 4: System Packages (Ubuntu/Debian)
+
+```bash
+# Install system Python packages
+sudo apt update
+sudo apt install python3-pandas python3-pydantic python3-jinja2 python3-reportlab
+
+# Install PyQt6 for GUI
+pip install --user PyQt6
+```
+
+### Troubleshooting: externally-managed-environment Error
+
+This error occurs when pip tries to install packages in system-managed Python environments. Solutions:
+
+1. **Use virtual environment** (recommended):
+   ```bash
+   python3 -m venv myenv
+   source myenv/bin/activate
+   pip install -e .
+   ```
+
+2. **Install with --user flag**:
+   ```bash
+   pip install --user -e .
+   ```
+
+3. **Use pipx for global installs**:
+   ```bash
+   pipx install -e .
+   ```
+
+4. **Check your Python installation**:
+   - Ensure you're using the correct Python version
+   - Consider using conda/miniconda for isolated environments
 
 ## Quick Start
 
