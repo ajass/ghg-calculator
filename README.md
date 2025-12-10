@@ -14,7 +14,7 @@ A modular, accurate, and extensible Python application for calculating greenhous
 
 ## Installation
 
-### Basic Installation
+### Basic Installation (Includes GUI)
 
 **Important:** If you encounter "externally-managed-environment" errors, see the troubleshooting section below.
 
@@ -22,14 +22,11 @@ A modular, accurate, and extensible Python application for calculating greenhous
 pip install -e .
 ```
 
-For GUI support:
-```bash
-pip install -e ".[gui]"
-```
+This installs both CLI and GUI support. The GUI requires a display environment (see troubleshooting below).
 
 For development:
 ```bash
-pip install -e ".[dev,gui]"
+pip install -e ".[dev]"
 ```
 
 ### Installation Methods
@@ -41,9 +38,8 @@ pip install -e ".[dev,gui]"
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install package
+# Install package (includes GUI)
 pip install -e .
-pip install -e ".[gui]"  # For GUI support
 
 # Deactivate when done
 deactivate
@@ -54,7 +50,6 @@ deactivate
 ```bash
 # Install to user directory (avoids permission issues)
 pip install --user -e .
-pip install --user -e ".[gui]"
 ```
 
 #### Method 3: Global Installation with pipx
@@ -64,7 +59,7 @@ pip install --user -e ".[gui]"
 pip install --user pipx
 pipx ensurepath
 
-# Install globally
+# Install globally (includes GUI)
 pipx install -e .
 ```
 
@@ -73,10 +68,7 @@ pipx install -e .
 ```bash
 # Install system Python packages
 sudo apt update
-sudo apt install python3-pandas python3-pydantic python3-jinja2 python3-reportlab
-
-# Install PyQt6 for GUI
-pip install --user PyQt6
+sudo apt install python3-pandas python3-pydantic python3-jinja2 python3-reportlab python3-pyqt6
 ```
 
 ### Troubleshooting: externally-managed-environment Error
